@@ -18,8 +18,8 @@ window.addEventListener('load', () => {
     const spiderWidth = spider.clientWidth;
     const spiderHeight = spider.clientHeight;
 
-    const left = (wallWidth - spiderWidth) / 2;
-    const topPos = (wallHeight - spiderHeight) / 2;
+    const left = Math.round((wallWidth - spiderWidth) / 2);
+    const topPos = Math.round((wallHeight - spiderHeight) / 2);
 
     spider.style.position = 'absolute';
     spider.style.left = `${left}px`;
