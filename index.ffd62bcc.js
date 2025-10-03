@@ -1,0 +1,2 @@
+window.addEventListener("load",function(){var t=function(){var t=e.clientWidth,n=e.clientHeight,o=i.clientWidth,l=i.clientHeight,c=Math.round((t-o)/2),d=Math.round((n-l)/2);i.style.position="absolute",i.style.left="".concat(c,"px"),i.style.top="".concat(d,"px")},e=document.querySelector(".wall"),i=document.querySelector(".spider");e&&i&&("static"===getComputedStyle(e).position&&(e.style.position="relative"),t(),window.addEventListener("resize",t))});
+//# sourceMappingURL=index.ffd62bcc.js.map
