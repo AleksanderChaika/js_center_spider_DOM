@@ -1,23 +1,31 @@
 'use strict';
 
-const wall = document.querySelector('.wall');
-const spider = document.querySelector('.spider');
+window.addEventListener('load', () => {
+  const wall = document.querySelector('.wall');
+  const spider = document.querySelector('.spider');
 
-function centerSpider() {
-  const wallWidth = wall.clientWidth;
-  const wallHeight = wall.clientHeight;
-  const spiderWidth = spider.clientWidth;
-  const spiderHeight = spider.clientHeight;
+  if (!wall || !spider) {
+    return;
+  }
 
-  const left = (wallWidth - spiderWidth) / 2;
-  const topPos = (wallHeight - spiderHeight) / 2;
+  if (getComputedStyle(wall).position === 'static') {
+    wall.style.position = 'relative';
+  }
 
-  spider.style.position = 'absolute';
-  spider.style.left = `${left}px`;
-  spider.style.top = `${topPos}px`;
-}
+  function centerSpider() {
+    const wallWidth = wall.clientWidth;
+    const wallHeight = wall.clientHeight;
+    const spiderWidth = spider.clientWidth;
+    const spiderHeight = spider.clientHeight;
 
-if (wall && spider) {
+    const left = (wallWidth - spiderWidth) / 2;
+    const topPos = (wallHeight - spiderHeight) / 2;
+
+    spider.style.position = 'absolute';
+    spider.style.left = `${left}px`;
+    spider.style.top = `${topPos}px`;
+  }
+
   centerSpider();
   window.addEventListener('resize', centerSpider);
-}
+});
